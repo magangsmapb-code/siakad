@@ -28,7 +28,7 @@ export function Checkbox(props: InputHTMLAttributes<HTMLInputElement>) {
   return <input {...props} type="checkbox" className={`size-4 accent-emerald-700 ${props.className ?? ""}`} />;
 }
 
-export function Switch({ checked, onCheckedChange, label, disabled }: { checked: boolean; onCheckedC hange: (checked: boolean) => void; label: string; disabled?: boolean }) {
+export function Switch({ checked, onCheckedChange, label, disabled }: { checked: boolean; onCheckedChange: (checked: boolean) => void; label: string; disabled?: boolean }) {
   return <button type="button" role="switch" aria-checked={checked} aria-label={label} disabled={disabled} onClick={() => onCheckedChange(!checked)} className={`relative h-6 w-11 rounded-full transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 disabled:opacity-50 ${checked ? "bg-emerald-700" : "bg-slate-300 dark:bg-slate-600"}`}><span className={`absolute top-1 size-4 rounded-full bg-white transition-transform ${checked ? "translate-x-6" : "translate-x-1"}`} /></button>;
 }
 

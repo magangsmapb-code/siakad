@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+.venv/
+.venv*/
+node_modules/
+.trae/
+.vscode/mcp.json
+supabase/.temp/
+__pycache__/
+*.py[cod]
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/*.tsbuildinfo

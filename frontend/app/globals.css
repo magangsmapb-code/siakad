@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --foreground: #172033;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --primary: #059669;
+  --primary-hover: #047857;
+  --primary-dark: #065f46;
+  --font-sans: var(--font-poppins), sans-serif;
+}
+
+:root.dark {
+  color-scheme: dark;
+  --background: #0b1220;
+  --surface: #111827;
+  --surface-muted: #172033;
+  --foreground: #e5edf7;
+  --muted: #94a3b8;
+  --border: #263449;
+  --primary: #34d399;
+  --primary-hover: #6ee7b7;
+  --primary-dark: #a7f3d0;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+::selection { background: #a7f3d0; color: #064e3b; }
+
+.auth-grid {
+  background-color: #f8fafc;
+  background-image: linear-gradient(rgba(5, 150, 105, .045) 1px, transparent 1px), linear-gradient(90deg, rgba(5, 150, 105, .045) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+html.dark .auth-grid { background-color: #0b1220; color: #e5edf7; }
+html.dark .auth-grid section:last-of-type { border-color: #263449; background-color: #111827; }
+html.dark .auth-grid h1,
+html.dark .auth-grid h2,
+html.dark .auth-grid label { color: #e5edf7; }
+html.dark .auth-grid p,
+html.dark .auth-grid span { color: #94a3b8; }
+html.dark .auth-grid input { border-color: #334155; background-color: #172033; color: #e5edf7; }
+html.dark .auth-grid input::placeholder { color: #94a3b8; }
+html.dark .auth-grid a { color: #6ee7b7; }
+html.dark .auth-grid button { color: #e5edf7; }
+html.dark .auth-grid button[type="submit"] { background-color: #047857; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .enter { animation: enter .45s ease-out both; }
+  @keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+}
